@@ -12,5 +12,10 @@ const entities = useEntitiesStore().entities;
 </template>
 
 <style scoped lang="scss">
-
+.entities-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: scroll;
+}
 </style>

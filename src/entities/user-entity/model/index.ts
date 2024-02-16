@@ -12,6 +12,12 @@ export const useEntitiesStore = defineStore("entities", () => {
         {id: 123123, type: "company"},
         {id: 123123, type: "contact"},
         {id: 123123, type: "transaction"},
+        {id: 123123, type: "company"},
+        {id: 123123, type: "contact"},
+        {id: 123123, type: "transaction"},
+        {id: 123123, type: "company"},
+        {id: 123123, type: "contact"},
+        {id: 123123, type: "transaction"},
     ]);
 
     function addEntity(entity: IStoreEntityType) {

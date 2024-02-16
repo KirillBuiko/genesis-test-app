@@ -12,28 +12,56 @@ const props = defineProps<{
 <template>
   <div class="entity-card-wrapper">
     <div class="entity-icon" :style="{'backgroundImage': `url('${iconPaths[props.entity.type]}')`}"></div>
+    <div class="delimiter"/>
     <div class="entity-info">
       <div class="name">{{ entitiesLabels[props.entity.type] }}</div>
-      <div class="id">{{props.entity.id}}</div>
+
+      <div class="id">Идентификатор: {{ props.entity.id }}</div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.entity-card-wrapper{
+$card-height: 50px;
+
+.entity-card-wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background: rgba(100, 100, 100, 0.05);
+  border-radius: 30px;
+  border: 1px solid rgba(128, 128, 128);
+  padding: 10px;
+  height: $card-height;
+
 
   .entity-icon {
-    width: 50px;
-    height: 50px;
+    width: min(70px, $card-height);
+    aspect-ratio: 1/1;
+    border-radius: 9999px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 60%;
+    border: 1px solid rgba(128, 128, 128);
+    background-position: center;
   }
 
   .entity-info {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    gap: 7px;
+
+    .name {
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+  
+  .delimiter {
+    width: 1px;
+    height: 100%;
+    background: #000;
   }
 }
 </style>

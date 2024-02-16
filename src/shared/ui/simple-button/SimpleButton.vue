@@ -16,10 +16,18 @@ withDefaults(defineProps<{
 
 <style scoped lang="scss">
 .simple-button-wrapper {
-  -webkit-user-select: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  height: min-content;
+  border-radius: 3px;
+  background: var(--blue-color);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  user-select: none;
   cursor: pointer;
-  padding: 5px 10px;
-  background: skyblue;
-  border-radius: 5px;
 }
 </style>
