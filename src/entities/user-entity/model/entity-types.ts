@@ -1,4 +1,4 @@
-export type EntityName = "company" | "contact" | "transaction";
+export type EntityName = "company" | "contact" | "lead";
 
 export interface IBaseResponse {
     id: number
@@ -12,20 +12,20 @@ export interface IContactRequest {}
 
 export interface IContactResponse extends IBaseResponse {}
 
-export interface ITransactionRequest {}
+export interface ILeadRequest {}
 
-export interface ITransactionResponse extends IBaseResponse {}
+export interface ILeadResponse extends IBaseResponse {}
 
 export interface RequestType {
     company: ICompanyRequest,
     contact: IContactRequest,
-    transaction: ITransactionRequest
+    lead: ILeadRequest
 }
 type _check = RequestType[EntityName];
 
 export interface ResponseType {
     company: ICompanyResponse,
     contact: IContactResponse,
-    transaction: ITransactionResponse
+    lead: ILeadResponse
 }
 type __check = ResponseType[EntityName];

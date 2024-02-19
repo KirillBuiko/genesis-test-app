@@ -11,10 +11,9 @@ const options: string[] = ["Не выбрано", ...Object.keys(entitiesLabels)
 const isLoading = ref(false);
 
 async function onClick() {
-  console.log(selectedItem.value);
   if (selectedItem.value === 0) return;
   isLoading.value = true;
-  const key = Object.keys(entitiesLabels)[selectedItem.value-1] as EntityName;
+  const key = Object.keys(entitiesLabels)[Number(selectedItem.value)-1] as EntityName;
   await useEntitiesStore().createEntity(key, {});
   isLoading.value = false;
 }
@@ -39,6 +38,7 @@ async function onClick() {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
 
   .button-preloader-block {
     display: flex;

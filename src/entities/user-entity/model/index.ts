@@ -9,15 +9,9 @@ export interface IStoreEntityType extends IBaseResponse {
 
 export const useEntitiesStore = defineStore("entities", () => {
     const entities = ref<IStoreEntityType[]>([
-        {id: 123123, type: "company"},
-        {id: 123123, type: "contact"},
-        {id: 123123, type: "transaction"},
-        {id: 123123, type: "company"},
-        {id: 123123, type: "contact"},
-        {id: 123123, type: "transaction"},
-        {id: 123123, type: "company"},
-        {id: 123123, type: "contact"},
-        {id: 123123, type: "transaction"},
+        {id: 123, type: "company"},
+        {id: 456, type: "contact"},
+        {id: 789, type: "lead"},
     ]);
 
     function addEntity(entity: IStoreEntityType) {

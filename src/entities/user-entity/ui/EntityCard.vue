@@ -15,29 +15,27 @@ const props = defineProps<{
     <div class="delimiter"/>
     <div class="entity-info">
       <div class="name">{{ entitiesLabels[props.entity.type] }}</div>
-
       <div class="id">Идентификатор: {{ props.entity.id }}</div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-$card-height: 50px;
+$card-height: 80px;
 
 .entity-card-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  background: rgba(100, 100, 100, 0.05);
-  border-radius: 30px;
+  background: rgba(169, 169, 169, 0.05);
+  border-radius: 10px;
   border: 1px solid rgba(128, 128, 128);
   padding: 10px;
   height: $card-height;
 
-
   .entity-icon {
-    width: min(70px, $card-height);
+    width: min(70px, $card-height*0.7);
     aspect-ratio: 1/1;
     border-radius: 9999px;
     background-repeat: no-repeat;

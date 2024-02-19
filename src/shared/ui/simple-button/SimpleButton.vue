@@ -1,15 +1,13 @@
 <script setup lang="ts">
-withDefaults(defineProps<{
-  enabled: boolean,
-  loading: boolean
+const props = withDefaults(defineProps<{
+  enabled?: boolean
 }>(), {
-  enabled: true,
-  loading: false
+  enabled: true
 });
 </script>
 
 <template>
-  <div class="simple-button-wrapper">
+  <div class="simple-button-wrapper" :class="{disabled: !props.enabled}">
     <slot/>
   </div>
 </template>
@@ -20,7 +18,7 @@ withDefaults(defineProps<{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 15px;
   height: min-content;
   border-radius: 3px;
   background: var(--blue-color);
@@ -29,5 +27,12 @@ withDefaults(defineProps<{
   font-size: 14px;
   user-select: none;
   cursor: pointer;
+
+  &.disabled {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    cursor: unset;
+  }
 }
 </style>
